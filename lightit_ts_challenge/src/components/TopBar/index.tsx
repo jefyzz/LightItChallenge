@@ -1,13 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Image, View } from "react-native";
 import styles from "./styles";
 import SaveButton from "../SaveButton";
 
 function TopBar() {
-  const [isDropdownOpen, setDropdownOpen] = useState(false);
-  const handleDropdownToggle = () => {
-    setDropdownOpen(!isDropdownOpen);
-  };
   return (
     <>
       <View
@@ -18,11 +14,7 @@ function TopBar() {
           className="w-12 h-12 rounded-full"
           source={require("../../img/logo.png")}
         />
-        <SaveButton
-          text="Guardar y salir"
-          handleDropdownToggle={handleDropdownToggle}
-          isDropdownOpen={isDropdownOpen}
-        />
+        <SaveButton />
       </View>
     </>
   );
