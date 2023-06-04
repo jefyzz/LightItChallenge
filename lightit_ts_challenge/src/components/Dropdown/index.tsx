@@ -65,7 +65,7 @@ function Dropdown({ children, className, items }: DropdownProps) {
           className="absolute bg-white px-2 pb-2 top-10 w-40 rounded-md"
           style={{ opacity: fadeAnim }}
         >
-          {items.map(({ label, className }, idx) => (
+          {items.map(({ label, className, onPress }, idx) => (
             <TouchableOpacity
               activeOpacity={1}
               className={cx(
@@ -76,6 +76,7 @@ function Dropdown({ children, className, items }: DropdownProps) {
                 className
               )}
               key={`dropdown-item-${label}`}
+              onPress={onPress}
             >
               <Text>{label}</Text>
             </TouchableOpacity>
