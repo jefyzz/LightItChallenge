@@ -34,17 +34,17 @@ function Modal({ toggleModal, isModalVisible, children }: ModalProps) {
         <TouchableOpacity
           activeOpacity={0.9}
           className="bg-gray-100 rounded-md w-12 h-12 justify-center items-center"
-          onPress={() => console.log('pressed Pin')}
+          onPress={() => console.log("pressed Fijar")}
         >
           <Image
-            className="w-8 h-8"
+            className="w-8 h-8 rotate-90"
             source={require("../../../assets/img/pin.png")}
           />
         </TouchableOpacity>
         <TouchableOpacity
           activeOpacity={0.9}
           className="bg-gray-100 rounded-md w-12 h-12 justify-center items-center"
-          onPress={() => console.log('pressed Trash')}
+          onPress={() => console.log("pressed Borrar")}
         >
           <Image
             className="w-8 h-8"
