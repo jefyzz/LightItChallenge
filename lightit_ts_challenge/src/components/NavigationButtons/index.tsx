@@ -1,14 +1,14 @@
-import React, { useRef } from "react";
-import { Image, View, TouchableOpacity, PanResponder  } from "react-native";
+import React from "react";
+import { Image, View, TouchableOpacity  } from "react-native";
 import cx from "classnames";
 
 function NavButtons({openModal}: {openModal: () => void}) {
-  
   const containerClass = "flex flex-row justify-between absolute bottom-6";
   const iconSize = "h-4 w-4";
   const handlePress = (actionType: string) => {
     console.log(`button ${actionType} was pressed`);
   };
+
   return (
     <>
       <View className={cx(containerClass, "left-6 bottom-8")}>
@@ -18,7 +18,7 @@ function NavButtons({openModal}: {openModal: () => void}) {
           style={{ elevation: 5 }}
           onPress={openModal}
         >
-          <Image className="h-10 w-10" source={require("../../img/add.png")} />
+          <Image className="h-10 w-10" source={require("../../../assets/img/add.png")} />
         </TouchableOpacity>
       </View>
       <View className={cx("right-6", containerClass)}>
@@ -29,7 +29,7 @@ function NavButtons({openModal}: {openModal: () => void}) {
           >
             <Image
               className={cx(iconSize)}
-              source={require("../../img/add.png")}
+              source={require("../../../assets/img/add.png")}
             />
           </TouchableOpacity>
           <View className="border-b-2 border-gray-300 w-6 my-1.5" />
@@ -39,7 +39,7 @@ function NavButtons({openModal}: {openModal: () => void}) {
           >
             <Image
               className={cx(iconSize)}
-              source={require("../../img/remove.png")}
+              source={require("../../../assets/img/remove.png")}
             />
           </TouchableOpacity>
         </View>
@@ -48,7 +48,7 @@ function NavButtons({openModal}: {openModal: () => void}) {
             <TouchableOpacity onPress={() => handlePress("moveUp")}>
               <Image
                 className={cx(iconSize)}
-                source={require("../../img/uparrow.png")}
+                source={require("../../../assets/img/uparrow.png")}
               />
             </TouchableOpacity>
           </View>
@@ -56,13 +56,13 @@ function NavButtons({openModal}: {openModal: () => void}) {
             <TouchableOpacity onPress={() => handlePress("moveLeft")}>
               <Image
                 className={cx(iconSize, "-rotate-90")}
-                source={require("../../img/uparrow.png")}
+                source={require("../../../assets/img/uparrow.png")}
               />
             </TouchableOpacity>
             <TouchableOpacity onPress={() => handlePress("moveRight")}>
               <Image
                 className={cx(iconSize, "rotate-90")}
-                source={require("../../img/uparrow.png")}
+                source={require("../../../assets/img/uparrow.png")}
               />
             </TouchableOpacity>
           </View>
@@ -70,7 +70,7 @@ function NavButtons({openModal}: {openModal: () => void}) {
             <TouchableOpacity onPress={() => handlePress("moveDown")}>
               <Image
                 className={cx(iconSize, "rotate-180")}
-                source={require("../../img/uparrow.png")}
+                source={require("../../../assets/img/uparrow.png")}
               />
             </TouchableOpacity>
           </View>

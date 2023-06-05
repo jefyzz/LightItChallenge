@@ -49,7 +49,7 @@ export function ModalContent({ children }: { children: ReactNode }) {
 export function ModalFooter({ children }: { children: ReactNode }) {
   return (
     <View
-      className="flex flex-row justify-evenly items-center h-20"
+      className="flex flex-row justify-evenly items-center h-20 bg-white rounded"
     >
       {children}
     </View>

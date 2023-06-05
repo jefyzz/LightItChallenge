@@ -12,7 +12,7 @@ function TopBar() {
       >
         <Image
           className="w-12 h-12 rounded-full"
-          source={require("../../img/logo.png")}
+          source={require("../../../assets/img/logo.png")}
         />
         <SaveButton />
       </View>

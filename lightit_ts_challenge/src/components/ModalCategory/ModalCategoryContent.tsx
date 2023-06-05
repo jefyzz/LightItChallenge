@@ -12,6 +12,7 @@ import Modal, { ModalContent, ModalFooter, ModalProps } from "../Modal";
 import { modalCategoryItems } from "../Modal/constants";
 import { ModalCategoryContext } from "../../contexts";
 import { APIItem, APIItemResponse } from "../../contexts/ModalCategory/types";
+import {ModalCategoryContentItem} from './ModalCategoryContentItem'
 
 function ModalCategoryContent() {
   const {
@@ -30,7 +31,7 @@ function ModalCategoryContent() {
   };
 
   if (selectedItems) {
-    return <Text>ola vengo a flotar</Text>;
+    return <ModalCategoryContentItem />
   }
 
   return (
@@ -57,7 +58,7 @@ function ModalCategoryContent() {
               <Text style={{ color: "#8c8c8c" }}>{item.name}</Text>
               <Image
                 className="rotate-180 h-3 w-3"
-                source={require("../../img/chevron-left.png")}
+                source={require("../../../assets/img/chevron-left.png")}
               />
             </TouchableOpacity>
           )}

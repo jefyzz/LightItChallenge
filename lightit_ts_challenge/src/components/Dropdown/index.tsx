@@ -56,7 +56,7 @@ function Dropdown({ children, className, items }: DropdownProps) {
       <View className="flex-row jusitfy-center items-center">
         <View className="border-l-2 border-gray-100 mx-2 h-8" />
         <Image
-          source={require("../../img/chevron-left.png")}
+          source={require("../../../assets/img/chevron-left.png")}
           className="-rotate-90 opacity-50"
         />
       </View>
@@ -67,7 +67,7 @@ function Dropdown({ children, className, items }: DropdownProps) {
         >
           {items.map(({ label, className, onPress }, idx) => (
             <TouchableOpacity
-              activeOpacity={1}
+              activeOpacity={0.6}
               className={cx(
                 "pl-1",
                 idx === items.length - 1

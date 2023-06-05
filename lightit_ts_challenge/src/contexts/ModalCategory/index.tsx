@@ -77,7 +77,6 @@ export function ModalCategoryProvider({ children }: { children: ReactNode }) {
   };
 
   useEffect(() => {
-    setSelectedItems(undefined)
     if (!categories[selectedCategory] && !isCategoriesLoading) {
       fetchCategories(selectedCategory);
     }
