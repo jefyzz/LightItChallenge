@@ -2,18 +2,16 @@ import React, { ReactNode } from "react";
 import ModalComponent from "react-native-modal";
 import {
   type ImageSourcePropType,
+  Image,
+  TouchableOpacity,
   View,
-  Text,
-  GestureResponderEvent,
 } from "react-native";
-import ModalCategory from "../ModalCategory";
-import { modalCategoryItems } from "./constants";
 import COLORS from "../../utils/colors";
 import { Category } from "../../contexts/ModalCategory/types";
 
 export type ModalCategoryItem = {
   label: string;
-  id: Category
+  id: Category;
   icon: ImageSourcePropType;
 };
 
@@ -32,6 +30,28 @@ function Modal({ toggleModal, isModalVisible, children }: ModalProps) {
       backdropColor="black"
       onBackdropPress={toggleModal}
     >
+      <View className="flex-row justify-around my-1.5 w-28 self-end">
+        <TouchableOpacity
+          activeOpacity={0.9}
+          className="bg-gray-100 rounded-md w-12 h-12 justify-center items-center"
+          onPress={() => console.log('pressed Pin')}
+        >
+          <Image
+            className="w-8 h-8"
+            source={require("../../../assets/img/pin.png")}
+          />
+        </TouchableOpacity>
+        <TouchableOpacity
+          activeOpacity={0.9}
+          className="bg-gray-100 rounded-md w-12 h-12 justify-center items-center"
+          onPress={() => console.log('pressed Trash')}
+        >
+          <Image
+            className="w-8 h-8"
+            source={require("../../../assets/img/trash.png")}
+          />
+        </TouchableOpacity>
+      </View>
       <View
         className="flex flex-1 rounded-xl flex-column justify-between"
         style={{ backgroundColor: COLORS.modalBackground }}
@@ -43,14 +63,12 @@ function Modal({ toggleModal, isModalVisible, children }: ModalProps) {
 }
 
 export function ModalContent({ children }: { children: ReactNode }) {
-  return <View className="p-4" >{children}</View>;
+  return <View className="p-4 h-4/5 max-h-4/5 flex-1">{children}</View>;
 }
 
 export function ModalFooter({ children }: { children: ReactNode }) {
   return (
-    <View
-      className="flex flex-row justify-evenly items-center h-20 bg-white rounded"
-    >
+    <View className="flex flex-row justify-evenly items-center max-h-20 bg-white rounded">
       {children}
     </View>
   );

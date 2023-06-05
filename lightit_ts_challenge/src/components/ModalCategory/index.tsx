@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Image, TouchableOpacity, Text, ActivityIndicator } from "react-native";
+import { Image, TouchableOpacity, Text } from "react-native";
 import Modal, { ModalContent, ModalFooter, ModalProps } from "../Modal";
 import { modalCategoryItems } from "../Modal/constants";
 import { ModalCategoryContext } from "../../contexts";
@@ -12,6 +12,7 @@ function ModalCategory({
 }: Pick<ModalProps, "toggleModal" | "isModalVisible">) {
   const { setSelectedCategory, setSelectedItems, selectedCategory } =
     useContext(ModalCategoryContext);
+
   return (
     <Modal toggleModal={toggleModal} isModalVisible={isModalVisible}>
       <ModalContent>

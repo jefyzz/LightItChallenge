@@ -9,7 +9,6 @@ import TopBar from "../TopBar/index";
 import NavButtons from "../NavigationButtons";
 
 import styles from "./styles";
-import Modal from "../Modal";
 import ModalCategory from "../ModalCategory";
 import { ModalCategoryProvider } from "../../contexts";
 
@@ -32,6 +31,7 @@ function Main() {
     onMoveShouldSetPanResponderCapture: () => true,
     onPanResponderRelease: handleDragRelease,
   });
+
   return (
     <SafeAreaView
       style={styles.root}

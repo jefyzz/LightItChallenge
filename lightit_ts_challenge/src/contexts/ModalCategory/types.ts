@@ -19,8 +19,8 @@ export interface ModalCategoryContextValue {
   selectedCategory: Category;
   setSelectedCategory: React.Dispatch<React.SetStateAction<Category>>;
   isLoading: boolean;
-  selectedItems?: APIItem[];
-  setSelectedItems: React.Dispatch<React.SetStateAction<APIItem[] | undefined>>;
+  selectedItems?: APIItemResponse;
+  setSelectedItems: React.Dispatch<React.SetStateAction<APIItemResponse | undefined>>;
   fetchCategories: (category: Category) => void;
 }
 

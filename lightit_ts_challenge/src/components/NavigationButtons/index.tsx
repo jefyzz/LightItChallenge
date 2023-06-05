@@ -1,8 +1,8 @@
 import React from "react";
-import { Image, View, TouchableOpacity  } from "react-native";
+import { Image, View, TouchableOpacity } from "react-native";
 import cx from "classnames";
 
-function NavButtons({openModal}: {openModal: () => void}) {
+function NavButtons({ openModal }: { openModal: () => void }) {
   const containerClass = "flex flex-row justify-between absolute bottom-6";
   const iconSize = "h-4 w-4";
   const handlePress = (actionType: string) => {
@@ -18,7 +18,10 @@ function NavButtons({openModal}: {openModal: () => void}) {
           style={{ elevation: 5 }}
           onPress={openModal}
         >
-          <Image className="h-10 w-10" source={require("../../../assets/img/add.png")} />
+          <Image
+            className="h-10 w-10"
+            source={require("../../../assets/img/add.png")}
+          />
         </TouchableOpacity>
       </View>
       <View className={cx("right-6", containerClass)}>

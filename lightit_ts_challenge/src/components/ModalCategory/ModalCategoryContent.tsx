@@ -8,11 +8,10 @@ import {
   View,
   RefreshControl,
 } from "react-native";
-import Modal, { ModalContent, ModalFooter, ModalProps } from "../Modal";
-import { modalCategoryItems } from "../Modal/constants";
 import { ModalCategoryContext } from "../../contexts";
-import { APIItem, APIItemResponse } from "../../contexts/ModalCategory/types";
-import {ModalCategoryContentItem} from './ModalCategoryContentItem'
+import { APIItemResponse } from "../../contexts/ModalCategory/types";
+import { ModalCategoryContentItem } from "./ModalCategoryContentItem";
+import COLORS from "../../utils/colors";
 
 function ModalCategoryContent() {
   const {
@@ -26,18 +25,18 @@ function ModalCategoryContent() {
 
   const categoryItems = categories[selectedCategory];
 
-  const handleSelectItems = (items: APIItemResponse["items"]) => {
+  const handleSelectItems = (items: APIItemResponse) => {
     setSelectedItems(items);
   };
 
   if (selectedItems) {
-    return <ModalCategoryContentItem />
+    return <ModalCategoryContentItem />;
   }
 
   return (
     <View className="flex flex-column items-start">
       <Text
-        style={{ color: "#707070" }}
+        style={{ color: COLORS.categoryTitle }}
         className="capitalize text-lg font-bold"
       >
         {selectedCategory}
@@ -52,7 +51,7 @@ function ModalCategoryContent() {
             <TouchableOpacity
               className="flex flex-row items-center justify-between py-2 px-4 bg-white rounded-md my-2"
               activeOpacity={0.9}
-              onPress={() => handleSelectItems(item.items)}
+              onPress={() => handleSelectItems(item)}
               key={`category-${item.name}`}
             >
               <Text style={{ color: "#8c8c8c" }}>{item.name}</Text>

@@ -12,16 +12,6 @@ import {
   type ModalCategoryContextValue,
 } from "./types";
 
-/*
-
-Los productos y categorías deben obtenerse desde:
-https://us-central1-prueba-front-280718.cloudfunctions.net/equipamiento
-https://us-central1-prueba-front-280718.cloudfunctions.net/aberturas
-https://us-central1-prueba-front-280718.cloudfunctions.net/terminaciones
-
-
-*/
-
 const initialState: ModalCategoryContextValue = {
   selectedCategory: "aberturas",
   setSelectedCategory: function () {
@@ -39,7 +29,7 @@ const initialState: ModalCategoryContextValue = {
   selectedItems: undefined,
   fetchCategories: function (category: Category): void {
     throw new Error("Function not implemented.");
-  }
+  },
 };
 
 export const ModalCategoryContext =
@@ -53,7 +43,7 @@ export function ModalCategoryProvider({ children }: { children: ReactNode }) {
     equipamiento: undefined,
     terminaciones: undefined,
   });
-  const [selectedItems, setSelectedItems] = useState<APIItem[] | undefined>(
+  const [selectedItems, setSelectedItems] = useState<APIItemResponse | undefined>(
     undefined
   );
   const [isCategoriesLoading, setIsCategoriesLoading] = useState(false);
